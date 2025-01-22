@@ -21,12 +21,10 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const flipBtn = document.getElementById('flipBtn');
 const progressBar = document.getElementById('progressBar');
-const progressBarBack = document.getElementById('progressBarBack');
 
 function updateProgressBar() {
     const progress = ((currentIndex + 1) / flashcards.length) * 100;
     progressBar.style.width = `${progress}%`;
-    progressBarBack.style.width = `${progress}%`;
 }
 
 function updateCard() {
