@@ -4,42 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linux Commands Flashcards</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
-        <h1 class="title">Linux Commands Flashcards</h1>
+
+
+<body class="min-h-screen flex flex-col p-4 md:p-8 bg-gradient-to-br from-gray-50 to-gray-200">
+    <div class="max-w-6xl mx-auto p-8 bg-white/95 rounded-3xl shadow-2xl flex flex-col items-center">
+        <h1 class="text-4xl font-extrabold tracking-tight text-center mb-8 w-full gradient-text">
+            Linux Commands Flashcards
+        </h1>
         
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <span class="card-label">Command</span>
-                    <div class="card-content">
-                        <p class="command-text" id="command"></p>
+        <div class="flip-card w-full max-w-2xl mx-auto h-[400px] flex justify-center items-center my-8">
+            <div class="flip-card-inner relative w-full h-full border-[12px] border-white rounded-3xl shadow-2xl">
+                <div class="flip-card-front absolute inset-0 rounded-xl bg-gradient-to-br from-white to-gray-50 flex justify-center items-center">
+                    <span class="absolute top-4 left-4 bg-gray-100 px-4 py-2 rounded-full text-sm text-gray-600 font-semibold shadow-sm">
+                        Command
+                    </span>
+                    <div class="w-full max-w-[90%] text-center px-6 py-4">
+                        <p id="command" class="text-5xl md:text-6xl font-extrabold tracking-tight gradient-text leading-tight break-words"></p>
                     </div>
                 </div>
-                <div class="flip-card-back">
-                    <span class="card-label">Description</span>
-                    <div class="card-content">
-                        <p class="description-text" id="description"></p>
+                <div class="flip-card-back absolute inset-0 rounded-xl bg-gradient-to-br from-gray-50 to-white flex justify-center items-center">
+                    <span class="absolute top-4 left-4 bg-gray-100 px-4 py-2 rounded-full text-sm text-gray-600 font-semibold shadow-sm">
+                        Description
+                    </span>
+                    <div class="w-full max-w-[90%] text-center px-6 py-4">
+                        <p id="description" class="text-2xl md:text-3xl text-gray-700 font-medium leading-relaxed break-words"></p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="progress-container">
-            <div class="progress-bar" id="progressBar"></div>
+        <div class="w-full max-w-2xl mx-auto bg-gray-200 h-2 rounded-full overflow-hidden">
+            <div id="progressBar" class="h-full bg-gradient-to-r from-blue-600 to-blue-700 transition-all duration-300"></div>
         </div>
 
-        <div class="counter">
-            <p class="text-gray-600 font-medium">Card <span id="currentCard">1</span> of <span id="totalCards">0</span></p>
+        <div class="bg-white px-8 py-4 rounded-xl shadow-sm my-4 max-w-[200px] text-center">
+            <p class="text-gray-600 font-medium">
+                Card <span id="currentCard">1</span> of <span id="totalCards">0</span>
+            </p>
         </div>
 
-        <div class="button-group">
-            <button id="prevBtn" class="btn-3d btn-prev">← Previous</button>
-            <button id="flipBtn" class="btn-3d btn-flip">Flip Card ↻</button>
-            <button id="nextBtn" class="btn-3d btn-next">Next →</button>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center mt-8 w-full">
+            <button id="prevBtn" class="btn-prev bg-gradient-to-br from-indigo-100 to-indigo-200 text-indigo-800 px-8 py-4 rounded-xl font-semibold min-w-[140px] transition-all duration-300 hover:shadow-lg">
+                ← Previous
+            </button>
+            <button id="flipBtn" class="btn-flip bg-gradient-to-br from-blue-500 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold min-w-[120px] transition-all duration-300 hover:shadow-lg">
+                Flip Card ↻
+            </button>
+            <button id="nextBtn" class="btn-next bg-gradient-to-br from-indigo-100 to-indigo-200 text-indigo-800 px-8 py-4 rounded-xl font-semibold min-w-[140px] transition-all duration-300 hover:shadow-lg">
+                Next →
+            </button>
         </div>
     </div>
     <script src="main.js"></script>
